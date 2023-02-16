@@ -1,5 +1,6 @@
 <?php include 'inc/header.php'; ?>
 
+<!-- Read -->
 <?php
   $sql = 'SELECT * FROM feedback';
   $result = mysqli_query($conn, $sql);
