@@ -27,4 +27,6 @@ if (!empty($name) && !empty($email) && !empty($feedback)) {
         // Error
         echo 'Error : ' . mysqli_error($conn);
     }
+
+    mysqli_close($conn);
 }

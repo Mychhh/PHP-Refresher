@@ -39,8 +39,8 @@ $number = 0;
                 <td><?php echo $feedback['email']; ?></td>
                 <td><?php echo $feedback['body']; ?></td>
                 <td><?php echo $feedback['date']; ?></td>
-                <td><button type="button" class="btn btn-outline-secondary">Edit</button></td>
-                <td><button type="button" class="btn btn-outline-dark">Delete</button></td>
+                <td><a href='update_crud.php?id=<?php echo $feedback['id'];?>'><button type="button" class="btn btn-outline-secondary" >Edit</button></a></td>
+                <td><a href='delete_crud.php?id=<?php echo $feedback['id'];?>'><button type="button" class="btn btn-outline-dark">Delete</button></a></td>
             </tr>
         <?php endforeach; ?>
 
@@ -49,7 +49,7 @@ $number = 0;
 </table>
 <!-- End of table -->
 
-<!-- Modal -->
+<!-- Modal to add feedback -->
 <div class="modal fade" id="addFeedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -58,7 +58,7 @@ $number = 0;
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="config/create.php">
+                <form method="POST" action="<?php echo htmlspecialchars('config/create.php'); ?>">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" name="name" class="form-control" id="name">
@@ -83,7 +83,6 @@ $number = 0;
         </div>
     </div>
 </div>
-<!-- End of Modal -->
-
+<!-- End of Modal to add feedback -->
 
 <?php include 'inc/footer.php' ?>
