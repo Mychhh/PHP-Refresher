@@ -13,10 +13,7 @@ $number = 0;
         <p class="lead mt3">There is no Items</p>
     <?php endif; ?>
     <div class="position-relative mt-auto mb-auto">
-        <button type="button" class="btn btn-outline-primary"
-        data-bs-toggle="modal" 
-        data-bs-target="#addFeedbackModal"
-        >Add Feedback</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addFeedbackModal">Add Feedback</button>
     </div>
 </div>
 
@@ -61,12 +58,28 @@ $number = 0;
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
+                <form method="POST" action="config/create.php">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="feedback" class="form-label">Feedback</label>
+                        <textarea class="form-control" name="feedback" id="feedback"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-primary" name="add_feedback">Add</button>
+                    </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-outline-primary">Add</button>
-            </div>
+            <!-- <div class="modal-footer">
+                
+            </div> -->
         </div>
     </div>
 </div>
